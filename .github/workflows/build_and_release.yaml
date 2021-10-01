@@ -2,7 +2,7 @@ name: Release Docker Image
 env:
   DOCKER_TAG_PREFIX: ghcr.io/joakimkistowski
   DOCKER_IMAGE_NAME: perftest
-  VERSION: 0.0.3
+  VERSION: 0.0.4
 
 on:
   push:
