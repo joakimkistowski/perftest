@@ -18,7 +18,7 @@ jobs:
     - name: Login to GitHub Container Registry
       run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
     - name: Build Docker image
-      run: docker build --tag ${{ env.DOCKER_TAG_PREFIX }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.VERSION }} --tag ${{ env.DOCKER_TAG_PREFIX }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+      run: docker build --tag ${{ env.DOCKER_TAG_PREFIX }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.VERSION }} --tag ${{ env.DOCKER_TAG_PREFIX }}/${{ env.DOCKER_IMAGE_NAME }}:latest .
     - name: Push Docker image
       run: |
         docker push ${{ env.DOCKER_TAG_PREFIX }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.VERSION }}
